@@ -1,13 +1,13 @@
 {
-  "name": "create-typescript",
-  "version": "1.0.5",
+  "name": "create-ts-module",
+  "version": "0.1.0",
   "description": "Create typescript module",
   "license": "MIT",
-  "repository": "LoicMahieu/create-typescript",
+  "repository": "mariusGundersen/create-ts-module",
   "author": {
-    "name": "Loïc Mahieu",
-    "email": "mahieuloic@gmail.com",
-    "url": "https://igloo.be"
+    "name": "Marius Gundersen",
+    "email": "npm@mariusgundersen.net",
+    "url": "https://mariusgundersen.net"
   },
   "engines": {
     "node": ">=6"
@@ -18,39 +18,22 @@
     "create",
     "typescript"
   ],
-  "bin": "./bin/create-typescript",
-  "main": "./lib/create-typescript.js",
-  "typings": "./lib/create-typescript.d.ts",
+  "bin": "./bin/create-ts-module",
+  "main": "./lib/create-ts-module.js",
   "files": [
-    "bin/*",
-    "lib/*",
+    "src/*",
     "template/*",
     "tsconfig.json"
   ],
   "scripts": {
-    "clean": "rimraf lib",
-    "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
-    "compile": "tsc",
-    "build": "npm run clean && npm run lint && npm run compile",
-    "watch": "npm run clean && npm run lint & npm run compile -- --sourceMap --watch",
-    "test": "rimraf test-dir && mkdir test-dir && yarn run build && cd test-dir && ../bin/create-typescript -y && yarn build && yarn lint",
-    "prepublish": "npm run build"
+    "test": "rimraf test-dir && mkdir test-dir && cd test-dir && ../bin/create-ts-module -y && npm run compile && npm run tslint && npm test"
   },
   "dependencies": {
     "execa": "^0.10.0",
     "fs-extra": "^6.0.1",
     "globby": "^8.0.1",
     "read-pkg": "^3.0.0",
-    "write-pkg": "^3.1.0"
-  },
-  "devDependencies": {
-    "@types/execa": "^0.9.0",
-    "@types/fs-extra": "^5.0.2",
-    "@types/globby": "^6.1.0",
-    "@types/read-pkg": "^3.0.0",
-    "@types/write-pkg": "^3.1.0",
     "rimraf": "^2.6.2",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "write-pkg": "^3.1.0"
   }
 }
