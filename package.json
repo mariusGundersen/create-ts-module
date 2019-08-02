@@ -1,6 +1,6 @@
 {
   "name": "create-ts-module",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Create typescript module",
   "license": "MIT",
   "repository": "mariusGundersen/create-ts-module",
@@ -21,11 +21,13 @@
   "bin": "./bin/create-ts-module",
   "main": "./lib/create-ts-module.js",
   "files": [
+    "bin/*",
     "src/*",
     "template/*",
     "tsconfig.json"
   ],
   "scripts": {
+    "clean": "rimraf test-dir",
     "test": "rimraf test-dir && mkdir test-dir && cd test-dir && ../bin/create-ts-module -y && npm run compile && npm run tslint && npm test"
   },
   "dependencies": {

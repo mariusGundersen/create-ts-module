@@ -147,6 +147,6 @@ async function copyFiles(files, from, to) {
 
   await Promise.all(expandedFiles.map(async (file) => {
     await fs.mkdirp(path.dirname(path.join(to, file)));
-    await fs.copy(path.join(from, file), path.join(to, file));
+    await fs.copy(path.join(from, file), path.join(to, file.replace("TEMPLATE", "")));
   }));
 }
