@@ -104,9 +104,9 @@ async function writePackageScripts(cwd) {
     peerDependencies: {
       "@babel/runtime": pkg.devDependencies["@babel/runtime"]
     },
-    main: "js/main.js",
-    types: "es/main.d.ts",
-    module: "es/main.js",
+    main: "js/index.js",
+    types: "es/index.d.ts",
+    module: "es/index.js",
     scripts: {
       ...pkg.scripts,
       clean: "rimraf ./es ./js",
