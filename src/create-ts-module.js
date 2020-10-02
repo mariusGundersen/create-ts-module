@@ -119,7 +119,6 @@ async function writePackageScripts(cwd) {
       prepublish: "npm run clean && npm run tslint && npm run test && npm compile"
     },
     ava: {
-      compileEnhancements: false,
       extensions: [
         "ts"
       ],
